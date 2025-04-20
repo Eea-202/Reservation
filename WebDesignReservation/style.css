@@ -1,0 +1,225 @@
+/* Temel stil ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #9b1b30;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 20px;
+    width: 80%;
+    margin: 40px auto 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+main {
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #e5e5e5;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #9b1b30;
+}
+
+.intro p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Fotoğraf Galerisi */
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-container img {
+    max-height: 200px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.scroll-btn.left {
+    left: 10px;
+}
+
+.scroll-btn.right {
+    right: 10px;
+}
+
+.scroll-btn:hover {
+    background-color: #a30000;
+    opacity: 1;
+}
+
+.photo-gallery {
+    position: relative;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox.hidden {
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    pointer-events: none;
+}
+
+.lightbox-nav button {
+    pointer-events: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.lightbox-nav button:hover {
+    opacity: 1;
+}
+
+/* Kartlar Bölümü */
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    max-width: 300px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    color: #9b1b30;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #9b1b30;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.card .btn:hover {
+    background-color: #7a1524;
+}
+
+/* Footer */
+footer {
+    background-color: #9b1b30;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}

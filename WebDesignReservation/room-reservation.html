@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Reservation - La Perla Regia</title>
+    <link rel="stylesheet" href="room-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <h1>La Perla Regia</h1>
+        <p class="sub-heading">Book Your Stay at Our Luxurious Hotel</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="restaurant-reservation.html">🍽️ Restaurant</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Görsel bölüm -->
+        <section class="hero-section">
+            <img src="images/guest-room.jpg" alt="Elegant room" class="hero-image">
+        </section>
+
+        <!-- Form bölümü -->
+        <section class="form-section">
+            <h2>Book Your Room</h2>
+            <form id="roomBookingForm" class="reservation-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="date" id="checkin" required>
+                <input type="date" id="checkout" required>
+                <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
+                <select id="room-type" required>
+                    <option value="">Select Room Type</option>
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Suite">Suite</option>
+                </select>
+                <button type="submit" class="btn reserve-btn">Reserve Room</button>
+            </form>
+        </section>
+
+        <!-- Rezervasyon listesi -->
+        <section class="list-section">
+            <h2>Your Reservations</h2>
+            <ul id="reservations"></ul>
+            <button id="clearAll" class="btn delete-all">Delete All</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
+    </footer>
+
+    <script src="script-room.js"></script>
+</body>
+</html>

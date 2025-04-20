@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>La Perla Regia - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <section class="welcome">
+            <h1>Welcome to La Perla Regia</h1>
+        </section>
+    </header>
+
+    <main>
+        <section class="intro">
+          <h2>Luxury & Comfort</h2>
+          <p>Enjoy a unique experience in our seaside hotel with luxury rooms, gourmet dining, and relaxing atmosphere.</p>
+          
+          <section class="photo-gallery">
+            <button class="scroll-btn left">⬅</button>
+            <div class="gallery-container">
+              <!-- Görseller -->
+              <img src="images/caption.jpg" alt="Hotel 1">
+              <img src="images/pool.jpg" alt="Hotel 2">
+              <img src="images/pool (1).jpg" alt="Hotel 3">
+              <img src="images/pool (2).jpg" alt="Hotel 4">
+              <img src="images/spa.jpg" alt="Hotel 5">
+              <img src="images/swiss-otel-cesme-mimari-3.jpg" alt="Hotel 6">
+              <img src="images/swiss-otel-plaj-4.jpg" alt="Hotel 7">
+              <img src="images/swiss-otel-plaj-5-1.jpg" alt="Hotel 8">
+              <img src="images/yeni-plaj-1-min.jpg" alt="Hotel 9">
+              <img src="images/yeni-plaj-2-min.jpg" alt="Hotel 10">
+              <img src="images/exterior.jpg" alt="Hotel 11">
+              <img src="images/B8Z7_Beach_2.jpg" alt="Hotel 12">
+              <img src="images/health-club-fitness-center.jpg" alt="Hotel 13">
+            </div>
+      
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox hidden">
+              <span class="close-btn">✖</span>
+              <img id="lightbox-img" src="" alt="Large View">
+              <div class="lightbox-nav">
+                <button id="prev-btn">⬅</button>
+                <button id="next-btn">➡</button>
+              </div>
+            </div>
+      
+            <button class="scroll-btn right">➡</button>
+          </section>
+        </section>
+      </main>
+      
+      <script>
+        const galleryImages = document.querySelectorAll('.gallery-container img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const scrollLeftBtn = document.querySelector('.scroll-btn.left');
+        const scrollRightBtn = document.querySelector('.scroll-btn.right');
+        const galleryContainer = document.querySelector('.gallery-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+      
+        let currentIndex = 0;
+      
+        function openLightbox(index) {
+          currentIndex = index;
+          lightboxImg.src = galleryImages[currentIndex].src;
+          lightboxImg.alt = galleryImages[currentIndex].alt;
+          lightbox.classList.remove('hidden');
+        }
+      
+        function closeLightbox() {
+          lightbox.classList.add('hidden');
+          lightboxImg.src = '';
+          lightboxImg.alt = '';
+        }
+      
+        galleryImages.forEach((img, index) => {
+          img.addEventListener('click', () => {
+            openLightbox(index);
+          });
+        });
+      
+        closeBtn.addEventListener('click', closeLightbox);
+      
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+      
+        scrollLeftBtn.addEventListener('click', () => {
+          galleryContainer.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+      
+        scrollRightBtn.addEventListener('click', () => {
+          galleryContainer.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+          lightboxImg.src = galleryImages[currentIndex].src;
+          lightboxImg.alt = galleryImages[currentIndex].alt;
+        });
+      
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          currentIndex = (currentIndex + 1) % galleryImages.length;
+          lightboxImg.src = galleryImages[currentIndex].src;
+          lightboxImg.alt = galleryImages[currentIndex].alt;
+        });
+      </script>
+      
+      
+                  
+            </section>
+        </section>
+
+        <section class="cards-section">
+            <div class="card">
+                <img src="images/ic-mimari-1-min.jpg" alt="Star Rooms">
+                <h3>🛏️ La Perla Regia Rooms</h3>
+                <p>Experience elegance and comfort in our sea-view hotel rooms.</p>
+                <a href="room-reservation.html" class="btn">Reserve a Room</a>
+            </div>
+
+            <div class="card">
+                <img src="images/restaurant.jpg" alt="Gourmet Restaurant">
+                <h3>🍽️ La Perla Regia Restaurant</h3>
+                <p>Taste world-class dishes prepared by top chefs in a cozy atmosphere.</p>
+                <a href="restaurant-reservation.html" class="btn">Reserve a Table</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
+    </footer>
+      
+
+</body>
+</html>
