@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("roomBookingForm"); // Oda rezervasyon formu
-    const list = document.getElementById("reservations"); // Rezervasyon listesi
-    const clearAllBtn = document.getElementById("clearAll"); // Tüm rezervasyonları silme butonu
+    const form = document.getElementById("roomBookingForm"); // Oda rezer form
+    const list = document.getElementById("reservations"); // Rezerv listesi
+    const clearAllBtn = document.getElementById("clearAll"); // Tüm rezerv silme 
 
     loadReservations();
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         saveReservation(reservation);
         addToList(reservation);
-        form.reset();
+        
     });
 
     function saveReservation(res) {
