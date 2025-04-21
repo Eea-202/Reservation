@@ -1,4 +1,3 @@
-/* Temel ayarlar */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
 .main-header {
     background-color: #800020;
     color: white;
@@ -49,8 +47,6 @@ body {
 .main-header nav a:hover {
     text-decoration: underline;
 }
-
-/* Hero Image */
 .hero-section {
     width: 100%;
     overflow: hidden;
@@ -63,7 +59,6 @@ body {
     object-fit: cover;
 }
 
-/* Form */
 .form-section {
     background-color: #fff;
     max-width: 600px;
@@ -123,8 +118,6 @@ body {
     margin: 0 auto;
     margin-top: 20px;
 }
-
-/* Rezervasyon listesi */
 .list-section {
     max-width: 600px;
     margin: 40px auto;
@@ -175,8 +168,6 @@ body {
     transform: translateY(-2px);
 }
 
-
-/* Footer */
 footer {
     background-color: #800020;
     color: white;
