@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Room Reservation - La Perla Regia</title>
-    <link rel="stylesheet" href="room-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room Reservation - La Perla Regia</title>
+  <link rel="stylesheet" href="room-style.css" />
 </head>
 <body>
-    <header class="main-header">
-        <h1>La Perla Regia</h1>
-        <p class="sub-heading">Book Your Stay at Our Luxurious Hotel</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="restaurant-reservation.html">🍽️ Restaurant</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="main-header">
+    <h1>La Perla Regia Rooms</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="restaurant-reservation.html">🍷 Restaurant</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="hero-section">
-            <img src="images/guest-room.jpg" alt="Elegant room" class="hero-image">
-        </section>
-        <section class="form-section">
-            <h2>Book Your Room</h2>
-            <form id="roomBookingForm" class="reservation-form">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="date" id="checkin" required>
-                <input type="date" id="checkout" required>
-                <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
-                <select id="room-type" required>
-                    <option value="">Select Room Type</option>
-                    <option value="Single">Single</option>
-                    <option value="Double">Double</option>
-                    <option value="Suite">Suite</option>
-                </select>
-                <button type="submit" class="btn reserve-btn">Reserve Room</button>
-            </form>
-        </section>
-        
-        <section class="list-section">
-            <h2>Your Reservations</h2>
-            <ul id="reservations"></ul>
-            <button id="clearAll" class="btn delete-all">Delete All</button>
-        </section>
-    </main>
+  <main>
+    <!-- FOTOĞRAF GALERİSİ -->
+    <section class="photo-gallery">
+      <div class="gallery-container">
+        <img src="images/guest-room.jpg" alt="Room 1" class="carousel-img" />
+        <img src="images/guest-room (1).jpg" alt="Room 2" class="carousel-img" />
+        <img src="images/guest-room (2).jpg" alt="Room 3" class="carousel-img" />
+        <img src="images/guest-room (3).jpg" alt="Room 4" class="carousel-img" />
+        <img src="images/guest-room (4).jpg" alt="Room 5" class="carousel-img" />
+        <img src="images/guest-room-bath.jpg" alt="Bathroom 1" class="carousel-img" />
+        <img src="images/guest-room-bath (1).jpg" alt="Bathroom 2" class="carousel-img" />
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
-    </footer>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox hidden">
+      <button class="nav-btn left">&#10094;</button>
+      <img id="lightbox-img" src="" alt="Large View" />
+      <button class="nav-btn right">&#10095;</button>
+      <button class="close-btn">&times;</button>
+    </div>
 
-    <script src="script-room.js"></script>
+    <!-- FORM -->
+    <section class="form-section">
+      <h2>Reserve a Room</h2>
+      <form id="roomBookingForm" class="reservation-form">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="date" id="checkin" required />
+        <input type="date" id="checkout" required />
+        <input type="number" id="guests" placeholder="Number of Guests" min="1" required />
+        <select id="room-type" required>
+          <option value="">Select Room Type</option>
+          <option value="Standard">Standard</option>
+          <option value="Deluxe">Deluxe</option>
+          <option value="Suite">Suite</option>
+        </select>
+        <button type="submit" class="btn reserve-btn">Reserve Room</button>
+      </form>
+    </section>
+
+    <!-- REZERVASYON LİSTESİ -->
+    <section class="list-section">
+      <h2>Your Reservations</h2>
+      <ul id="reservations"></ul>
+      <button id="clearAll" class="btn delete-all">Delete All</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
+  </footer>
+
+  <script src="script-room.js"></script>
 </body>
 </html>

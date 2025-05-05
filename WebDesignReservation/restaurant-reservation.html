@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Restaurant Reservation - La Perla Regia</title>
-    <link rel="stylesheet" href="restr-style.css">
+  <meta charset="UTF-8" />
+  <title>Restaurant Reservation - La Perla Regia</title>
+  <link rel="stylesheet" href="restr-style.css" />
 </head>
 <body>
-    <header class="main-header">
-        <h1>La Perla Regia</h1>
-        <p class="sub-heading">Reserve Your Spot at Our Exclusive Restaurant</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="room-reservation.html">🛏️ Rooms</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="main-header">
+    <h1>La Perla Regia Restaurant</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="room-reservation.html">🛏️ Rooms</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <!-- Görsel bölüm -->
-        <section class="hero-section">
-            <img src="images/barlounge.jpg" alt="Elegant restaurant" class="hero-image">
-        </section>
+  <main>
+    <!-- FOTOĞRAF GALERİSİ (SLIDESHOW + LIGHTBOX) -->
+    <section class="photo-gallery">
+      <div class="gallery-container">
+        <img src="images/restaurant.jpg" alt="Restaurant 1" class="carousel-img" />
+        <img src="images/restaurant (1).jpg" alt="Restaurant 2" class="carousel-img" />
+        <img src="images/restaurant (2).jpg" alt="Restaurant 3" class="carousel-img" />
+      </div>
+    </section>
 
-        <!-- Form bölümü -->
-        <section class="form-section">
-            <h2>Reserve a Table</h2>
-            <form id="restaurantForm" class="reservation-form">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="date" id="date" required>
-                <input type="time" id="time" required>
-                <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
-                <select id="table" required>
-                    <option value="">Select Table Type</option>
-                    <option value="Indoor">Indoor</option>
-                    <option value="Outdoor">Outdoor</option>
-                    <option value="VIP">VIP</option>
-                </select>
-                <button type="submit" class="btn reserve-btn">Reserve Table</button>
-            </form>
-        </section>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox hidden">
+      <button class="nav-btn left">&#10094;</button>
+      <img id="lightbox-img" src="" alt="Large View" />
+      <button class="nav-btn right">&#10095;</button>
+      <button class="close-btn">&times;</button>
+    </div>
 
-        <!-- Rezervasyon listesi -->
-        <section class="list-section">
-            <h2>Your Reservations</h2>
-            <ul id="reservations"></ul>
-            <button id="clearAll" class="btn delete-all">Delete All</button>
-        </section>
-    </main>
+    <!-- FORM -->
+    <section class="form-section">
+      <h2>Reserve a Table</h2>
+      <form id="restaurantForm" class="reservation-form">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <input type="number" id="guests" placeholder="Number of Guests" min="1" required />
+        <select id="table" required>
+          <option value="">Select Table Type</option>
+          <option value="Indoor">Indoor</option>
+          <option value="Outdoor">Outdoor</option>
+          <option value="VIP">VIP</option>
+        </select>
+        <button type="submit" class="btn reserve-btn">Reserve Table</button>
+      </form>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
-    </footer>
+    <!-- REZERVASYON LİSTESİ -->
+    <section class="list-section">
+      <h2>Your Reservations</h2>
+      <ul id="reservations"></ul>
+      <button id="clearAll" class="btn delete-all">Delete All</button>
+    </section>
+  </main>
 
-    <script src="script-restaurant.js"></script>
+  <footer>
+    <p>&copy; 2025 La Perla Regia. All rights reserved.</p>
+  </footer>
+
+  <script src="script-restaurant.js"></script>
 </body>
 </html>
